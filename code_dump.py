@@ -15,7 +15,7 @@ def generate_code_dump(root_dir, extensions, output_file, exclude_dirs):
     
     # Baseline junk directories that should always be ignored
     ignore_dirs = {'.git', '__pycache__', 'node_modules', 'venv', '.venv', 
-                   'env', '.idea', '.vscode'}
+                   'env', '.idea', '.vscode', 'flashenv', 'dist', 'build', 'target'}
     
     # Add any user-specified directories to the ignore set
     if exclude_dirs:
@@ -85,7 +85,7 @@ if __name__ == "__main__":
     parser.add_argument("-o", 
                         "--output", 
                         type=str, 
-                        default="file_tree.txt", 
+                        default="file_content_tree.txt", 
                         help="Output file name (default: file_tree.txt)")
     
     args = parser.parse_args()
